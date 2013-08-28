@@ -3,7 +3,7 @@ TQStarRatingView
 
 IOS 星星评分视图控件，点击和滑动评分。
 
-![Image text](http://github.com/TinyQ/MultistageTableView/raw/master/READMEIMAGE/TQStarRatingView.gif)
+![Image text](http://github.com/TinyQ/TQStarRatingView/raw/master/READMEIMAGE/TQStarRatingView.gif)
 
     ================================================
     TQStarRatingView *starRatingView = [[TQStarRatingView alloc] initWithFrame:CGRectMake(0, 300, 250, 50) numberOfStar:5];
