@@ -35,6 +35,35 @@
     return self;
 }
 
+//-- 分数必须在 0-1 之间
+- (void)setScore:(float)score withAnimation:(bool)isAnimate
+{
+    if (score < 0)
+    {
+        score = 0;
+    }
+    
+    if (score > 1)
+    {
+        score = 1;
+    }
+    
+    CGPoint point = CGPointMake(score * self.frame.size.width, 0);
+    
+    if(isAnimate)
+    {
+        __weak TQStarRatingView * weekSelf = self;
+        [UIView animateWithDuration:0.2 animations:^
+         {
+             [weekSelf changeStarForegroundViewWithPoint:point];
+         }];
+    }
+    else
+    {
+        [self changeStarForegroundViewWithPoint:point];
+    }
+}
+
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
     UITouch *touch = [touches anyObject];
@@ -52,16 +81,9 @@
     CGPoint point = [touch locationInView:self];
     __weak TQStarRatingView * weekSelf = self;
     
-    [UIView transitionWithView:self.starForegroundView
-                      duration:0.2
-                       options:UIViewAnimationOptionCurveEaseInOut
-                    animations:^
+    [UIView animateWithDuration:0.2 animations:^
      {
          [weekSelf changeStarForegroundViewWithPoint:point];
-     }
-                    completion:^(BOOL finished)
-     {
-    
      }];
 }
 
@@ -87,7 +109,8 @@
     {
         p.x = 0;
     }
-    else if (p.x > self.frame.size.width)
+    
+    if (p.x > self.frame.size.width)
     {
         p.x = self.frame.size.width;
     }
@@ -102,5 +125,6 @@
         [self.delegate starRatingView:self score:score];
     }
 }
+
 
 @end

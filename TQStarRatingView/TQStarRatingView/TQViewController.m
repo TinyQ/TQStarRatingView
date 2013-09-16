@@ -19,13 +19,20 @@
 {
     [super viewDidLoad];
     
-    TQStarRatingView *starRatingView = [[TQStarRatingView alloc] initWithFrame:CGRectMake(0, 300, 250, 50) numberOfStar:5];
-    starRatingView.delegate = self;
-    [self.view addSubview:starRatingView];
+    _starRatingView = [[TQStarRatingView alloc] initWithFrame:CGRectMake(30, 200, 250, 50) numberOfStar:5];
+    _starRatingView.delegate = self;
+    [self.view addSubview:_starRatingView];
 }
 
 -(void)starRatingView:(TQStarRatingView *)view score:(float)score
 {
     self.scoreLabel.text = [NSString stringWithFormat:@"%0.2f",score * 10 ];
 }
+
+- (IBAction)scoreButtonTouchUpInside:(id)sender
+{
+    //设置分数。参数需要在0-1之间。
+    [self.starRatingView setScore:0.5f withAnimation:YES];
+}
+
 @end

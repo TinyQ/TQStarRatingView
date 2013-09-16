@@ -18,8 +18,11 @@
 
 @interface TQStarRatingView : UIView
 
-- (id)initWithFrame:(CGRect)frame numberOfStar:(int)number;
 @property (nonatomic, readonly) int numberOfStar;
 @property (nonatomic, weak) id <StarRatingViewDelegate> delegate;
 
+- (id)initWithFrame:(CGRect)frame numberOfStar:(int)number;
+
+//-- 分数必须在 0-1 之间
+- (void)setScore:(float)score withAnimation:(bool)isAnimate;
 @end

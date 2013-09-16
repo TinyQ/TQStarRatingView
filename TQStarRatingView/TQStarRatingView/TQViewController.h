@@ -11,4 +11,7 @@
 
 @interface TQViewController : UIViewController <StarRatingViewDelegate>
 
+@property (nonatomic,strong)TQStarRatingView *starRatingView;
+
+- (IBAction)scoreButtonTouchUpInside:(id)sender;
 @end
