@@ -19,5 +19,4 @@ IOS 星星评分视图控件，点击和滑动评分。
     [self.starRatingView setScore:0.5f withAnimation:YES];
    
    
-控件效果 
 ![Image text](http://github.com/TinyQ/TQStarRatingView/raw/master/READMEIMAGE/TQStarRatingView.gif)
