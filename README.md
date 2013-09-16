@@ -18,4 +18,4 @@ IOS 星星评分视图控件，点击和滑动评分。
     用代码设置分数 参数需要在0-1之间。
     [self.starRatingView setScore:0.5f withAnimation:YES];
     
-    ![Image text](http://github.com/TinyQ/TQStarRatingView/raw/master/READMEIMAGE/TQStarRatingView.gif)
+![Image text](http://github.com/TinyQ/TQStarRatingView/raw/master/READMEIMAGE/TQStarRatingView.gif)
