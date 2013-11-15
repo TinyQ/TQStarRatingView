@@ -9,6 +9,7 @@
 #import "TQViewController.h"
 
 @interface TQViewController ()
+
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 
 @end

@@ -14,4 +14,5 @@
 @property (nonatomic,strong)TQStarRatingView *starRatingView;
 
 - (IBAction)scoreButtonTouchUpInside:(id)sender;
+
 @end
