@@ -36,8 +36,8 @@ IOS 星星评分视图控件，点击和滑动评分。
     
 ####  About TinyQ
 
- email <tinyqf@gmail.com>
+ email : <tinyqf@gmail.com>
  
- blogs <http://tinyq.me>
+ blogs : <http://tinyq.me>
  
  
