@@ -6,6 +6,7 @@
 //  Copyright (c) 2013年 TinyQ. All rights reserved.
 //
 
+
 #import <UIKit/UIKit.h>
 @class TQStarRatingView;
 
@@ -50,3 +51,6 @@
 - (void)setScore:(float)score withAnimation:(bool)isAnimate completion:(void (^)(BOOL finished))completion;
 
 @end
+
+#define kBACKGROUND_STAR @"backgroundStar"
+#define kFOREGROUND_STAR @"foregroundStar"

@@ -35,8 +35,8 @@
     self = [super initWithFrame:frame];
     if (self) {
         _numberOfStar = number;
-        self.starBackgroundView = [self buidlStarViewWithImageName:@"backgroundStar"];
-        self.starForegroundView = [self buidlStarViewWithImageName:@"foregroundStar"];
+        self.starBackgroundView = [self buidlStarViewWithImageName:kBACKGROUND_STAR];
+        self.starForegroundView = [self buidlStarViewWithImageName:kFOREGROUND_STAR];
         [self addSubview:self.starBackgroundView];
         [self addSubview:self.starForegroundView];
     }
