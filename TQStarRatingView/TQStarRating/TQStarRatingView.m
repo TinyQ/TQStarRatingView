@@ -22,6 +22,14 @@
     return [self initWithFrame:frame numberOfStar:5];
 }
 
+/**
+ *  初始化TQStarRatingView
+ *
+ *  @param frame  Rectangles
+ *  @param number 星星个数
+ *
+ *  @return TQStarRatingViewObject
+ */
 - (id)initWithFrame:(CGRect)frame numberOfStar:(int)number
 {
     self = [super initWithFrame:frame];
@@ -35,9 +43,31 @@
     return self;
 }
 
-//-- 分数必须在 0-1 之间
+#pragma mark -
+#pragma mark - Set Score
+
+/**
+ *  设置控件分数
+ *
+ *  @param score     分数，必须在 0 － 1 之间
+ *  @param isAnimate 是否启用动画
+ */
 - (void)setScore:(float)score withAnimation:(bool)isAnimate
 {
+    [self setScore:score withAnimation:isAnimate completion:^(BOOL finished){}];
+}
+
+/**
+ *  设置控件分数
+ *
+ *  @param score      分数，必须在 0 － 1 之间
+ *  @param isAnimate  是否启用动画
+ *  @param completion 动画完成block
+ */
+- (void)setScore:(float)score withAnimation:(bool)isAnimate completion:(void (^)(BOOL finished))completion
+{
+    NSAssert((score >= 0.0)&&(score <= 1.0), @"score must be between 0 and 1");
+    
     if (score < 0)
     {
         score = 0;
@@ -53,9 +83,17 @@
     if(isAnimate)
     {
         __weak TQStarRatingView * weekSelf = self;
+        
         [UIView animateWithDuration:0.2 animations:^
          {
              [weekSelf changeStarForegroundViewWithPoint:point];
+             
+         } completion:^(BOOL finished)
+         {
+             if (completion)
+             {
+                 completion(finished);
+             }
          }];
     }
     else
@@ -64,6 +102,8 @@
     }
 }
 
+#pragma mark -
+#pragma mark - Touche Event
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
     UITouch *touch = [touches anyObject];
@@ -87,6 +127,16 @@
      }];
 }
 
+#pragma mark -
+#pragma mark - Buidl Star View
+
+/**
+ *  通过图片构建星星视图
+ *
+ *  @param imageName 图片名称
+ *
+ *  @return 星星视图
+ */
 - (UIView *)buidlStarViewWithImageName:(NSString *)imageName
 {
     CGRect frame = self.bounds;
@@ -101,6 +151,14 @@
     return view;
 }
 
+#pragma mark -
+#pragma mark - Change Star Foreground With Point
+
+/**
+ *  通过坐标改变前景视图
+ *
+ *  @param point 坐标
+ */
 - (void)changeStarForegroundViewWithPoint:(CGPoint)point
 {
     CGPoint p = point;
@@ -125,6 +183,5 @@
         [self.delegate starRatingView:self score:score];
     }
 }
-
 
 @end
