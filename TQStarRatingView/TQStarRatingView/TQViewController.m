@@ -19,9 +19,11 @@
 {
     [super viewDidLoad];
     
-    _starRatingView = [[TQStarRatingView alloc] initWithFrame:CGRectMake(30, 200, 250, 50) numberOfStar:5];
+    _starRatingView = [[TQStarRatingView alloc] initWithFrame:CGRectMake(30, 200, 250, 50)
+                                                 numberOfStar:5];
     _starRatingView.delegate = self;
     [self.view addSubview:_starRatingView];
+    
 }
 
 -(void)starRatingView:(TQStarRatingView *)view score:(float)score
@@ -33,6 +35,16 @@
 {
     //设置分数。参数需要在0-1之间。
     [self.starRatingView setScore:0.5f withAnimation:YES];
+    
+    //or
+    /*
+     
+     [self.starRatingView setScore:0.5f withAnimation:YES completion:^(BOOL finished)
+     {
+     NSLog(@"%@",@"starOver");
+     }];
+     
+     */
 }
 
 @end
