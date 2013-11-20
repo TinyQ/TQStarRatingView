@@ -10,12 +10,13 @@ IOS 星星评分视图控件，点击和滑动评分。
 ![Image text](http://github.com/TinyQ/TQStarRatingView/raw/master/READMEIMAGE/TQStarRatingView.gif)
 
 #### 初始化
-	```objective-c
-    TQStarRatingView *starRatingView = [[TQStarRatingView alloc] initWithFrame:CGRectMake(30, 200, 250, 50)
+
+```objective-c
+   	TQStarRatingView *starRatingView = [[TQStarRatingView alloc] initWithFrame:CGRectMake(30, 200, 250, 50)
                                                                   numberOfStar:5];
     starRatingView.delegate = self;
     [self.view addSubview:starRatingView];
-    ```
+```
     
 #### 委托回调处理分数变更
     
