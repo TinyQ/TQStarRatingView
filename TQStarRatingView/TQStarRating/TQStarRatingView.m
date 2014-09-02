@@ -19,14 +19,14 @@
 
 - (id)initWithFrame:(CGRect)frame
 {
-    return [self initWithFrame:frame numberOfStar:5];
+    return [self initWithFrame:frame numberOfStar:kNUMBER_OF_STAR];
 }
 
 - (void)awakeFromNib
 {
     [super awakeFromNib];
     
-    _numberOfStar = 5;
+    _numberOfStar = kNUMBER_OF_STAR;
     [self commonInit];
 }
 
@@ -43,10 +43,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         _numberOfStar = number;
-        self.starBackgroundView = [self buidlStarViewWithImageName:kBACKGROUND_STAR];
-        self.starForegroundView = [self buidlStarViewWithImageName:kFOREGROUND_STAR];
-        [self addSubview:self.starBackgroundView];
-        [self addSubview:self.starForegroundView];
+        [self commonInit];
     }
     return self;
 }
@@ -98,11 +95,11 @@
     
     if(isAnimate)
     {
-        __weak TQStarRatingView * weekSelf = self;
+        __weak __typeof(self)weakSelf = self;
         
         [UIView animateWithDuration:0.2 animations:^
          {
-             [weekSelf changeStarForegroundViewWithPoint:point];
+             [weakSelf changeStarForegroundViewWithPoint:point];
              
          } completion:^(BOOL finished)
          {
@@ -135,11 +132,11 @@
 {
     UITouch *touch = [touches anyObject];
     CGPoint point = [touch locationInView:self];
-    __weak TQStarRatingView * weekSelf = self;
+    __weak __typeof(self)weakSelf = self;
     
     [UIView animateWithDuration:0.2 animations:^
      {
-         [weekSelf changeStarForegroundViewWithPoint:point];
+         [weakSelf changeStarForegroundViewWithPoint:point];
      }];
 }
 
