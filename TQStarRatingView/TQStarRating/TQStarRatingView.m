@@ -22,6 +22,14 @@
     return [self initWithFrame:frame numberOfStar:5];
 }
 
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
+    
+    _numberOfStar = 5;
+    [self commonInit];
+}
+
 /**
  *  初始化TQStarRatingView
  *
@@ -41,6 +49,14 @@
         [self addSubview:self.starForegroundView];
     }
     return self;
+}
+
+- (void)commonInit
+{
+    self.starBackgroundView = [self buidlStarViewWithImageName:kBACKGROUND_STAR];
+    self.starForegroundView = [self buidlStarViewWithImageName:kFOREGROUND_STAR];
+    [self addSubview:self.starBackgroundView];
+    [self addSubview:self.starForegroundView];
 }
 
 #pragma mark -

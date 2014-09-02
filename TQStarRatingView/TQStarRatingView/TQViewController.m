@@ -30,12 +30,16 @@
 -(void)starRatingView:(TQStarRatingView *)view score:(float)score
 {
     self.scoreLabel.text = [NSString stringWithFormat:@"%0.2f",score * 10 ];
+    
+    [self.nibStarRatingView setScore:score withAnimation:YES];
 }
 
 - (IBAction)scoreButtonTouchUpInside:(id)sender
 {
     //设置分数。参数需要在0-1之间。
     [self.starRatingView setScore:0.5f withAnimation:YES];
+    
+    [self.nibStarRatingView setScore:0.5f withAnimation:YES];
     
     //or
     /*
