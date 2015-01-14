@@ -14,7 +14,8 @@ IOS 星星评分视图控件，点击和滑动评分。
     ```
 - 属性fillType，用于控制星星显示粒度
 
-    ```/**
+    ```
+    /**
      填充粒度
      */
     typedef enum : NSUInteger {
