@@ -18,7 +18,7 @@ IOS 星星评分视图控件，点击和滑动评分。
      填充粒度
      */
     typedef enum : NSUInteger {
-        StartFillTypeAll,   //自由填充 粒度是0.1
+        StartFillTypeAll,   //自由填充 粒度是0.01
         StartFillTypeHalf,  //半颗星
         StartFillTypeFull,  //一颗星
     } StartFillType;
