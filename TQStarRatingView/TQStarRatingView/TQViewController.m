@@ -25,6 +25,7 @@
     _starRatingView.delegate = self;
     [self.view addSubview:_starRatingView];
     
+    _starRatingView.fillType = StartFillTypeHalf;
 }
 
 -(void)starRatingView:(TQStarRatingView *)view score:(float)score
@@ -32,6 +33,14 @@
     self.scoreLabel.text = [NSString stringWithFormat:@"%0.2f",score * 10 ];
     
     [self.nibStarRatingView setScore:score withAnimation:YES];
+}
+
+
+- (BOOL)starRatingView:(TQStarRatingView *)view shouldShowScore:(float)score{
+    if (score <= 0.f) {
+        return NO;
+    }
+    return YES;
 }
 
 - (IBAction)scoreButtonTouchUpInside:(id)sender

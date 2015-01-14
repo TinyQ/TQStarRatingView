@@ -13,15 +13,29 @@
 @protocol StarRatingViewDelegate <NSObject>
 
 @optional
--(void)starRatingView:(TQStarRatingView *)view score:(float)score;
+
+- (void)starRatingView:(TQStarRatingView *)view score:(float)score;
+
+//可以用于设置星星范围控制
+- (BOOL)starRatingView:(TQStarRatingView *)view shouldShowScore:(float)score;
 
 @end
 
+/**
+ 填充粒度
+ */
+typedef enum : NSUInteger {
+    StartFillTypeAll,   //自由填充 粒度是0.1
+    StartFillTypeHalf,  //半颗星
+    StartFillTypeFull,  //一颗星
+} StartFillType;
+
 @interface TQStarRatingView : UIView
 
-@property (nonatomic, readonly) int numberOfStar;
-
 @property (nonatomic, weak) id <StarRatingViewDelegate> delegate;
+
+//设置星星填充的最小粒度 默认是StartFillTypeAll
+@property (nonatomic, assign) StartFillType fillType;
 
 /**
  *  初始化TQStarRatingView
