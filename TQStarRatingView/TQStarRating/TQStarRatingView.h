@@ -33,7 +33,7 @@ typedef enum : NSUInteger {
 @interface TQStarRatingView : UIView
 
 @property (nonatomic, weak) id <StarRatingViewDelegate> delegate;
-
+@property (nonatomic, readonly) int numberOfStar;
 //设置星星填充的最小粒度 默认是StartFillTypeAll
 @property (nonatomic, assign) StartFillType fillType;
 
