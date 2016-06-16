@@ -38,9 +38,9 @@ Pod::Spec.new do |s|
 
   s.source       = { :git => "https://github.com/TinyQ/TQStarRatingView.git", :tag => "#{s.version}" }
 
-  s.source_files  = "TQStarRatingView/**/*.{h,m}"
+  s.source_files  = "TQStarRatingView/TQStarRating/**/*.{h,m}"
 
-  s.resources = "TQStarRatingView/**/*.png"
+  s.resources = "TQStarRatingView/TQStarRating/**/*.png"
 
   s.requires_arc = true
 
