@@ -36,9 +36,9 @@ Pod::Spec.new do |s|
   s.author       = { "tinyq" => "tinyqf@gmail.com" }
   s.platform     = :ios
 
-  s.source       = { :git => "https://github.com/TinyQ/TQStarRatingView.git", :tag => "#{s.version}" }
+  s.source       = { :git => "https://github.com/TinyQ/TQStarRatingView.git", :tag => "1.0" }
 
-  s.source_files  = "TQStarRatingView/TQStarRating/**/*.{h,m}"
+  s.source_files = "TQStarRatingView/TQStarRating/**/*.{h,m}"
 
   s.resources = "TQStarRatingView/TQStarRating/**/*.png"
 
