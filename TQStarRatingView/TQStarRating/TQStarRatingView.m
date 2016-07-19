@@ -48,8 +48,9 @@
     return self;
 }
 
-- (void)commonInit
-{
+- (void)commonInit{
+    self.fillType = StartFillTypeAll;
+    
     self.starBackgroundView = [self buidlStarViewWithImageName:kBACKGROUND_STAR];
     self.starForegroundView = [self buidlStarViewWithImageName:kFOREGROUND_STAR];
     [self addSubview:self.starBackgroundView];
@@ -187,7 +188,40 @@
     }
     
     NSString * str = [NSString stringWithFormat:@"%0.2f",p.x / self.frame.size.width];
-    float score = [str floatValue];
+    CGFloat score = [str floatValue];
+    
+    if (self.fillType == StartFillTypeFull) {
+        //which star is touch on
+        NSUInteger part = (1.0 / _numberOfStar) * 100;
+        NSUInteger present = score * 100;
+        NSUInteger index = present / part;
+        if (present % part != 0) {
+            index++;
+        }
+        score = index * part / 100.f;
+    }else if (self.fillType == StartFillTypeHalf){
+        NSUInteger part = (1.0 / _numberOfStar) * 100;
+        NSUInteger present = score * 100;
+        NSUInteger index = present / part;
+        NSUInteger gws = 0;
+        if (present % part != 0) {
+            int tmp = present*1.f / part*1.f * 10;
+            gws = tmp % 10;
+        }
+        if (gws >= 5) {
+            score = (index+1.0) * part / 100.f;
+        }else{
+            score = (index+0.5) * part / 100.f;
+        }
+    }
+    
+    BOOL shouldShow = YES;
+    if ([self.delegate respondsToSelector:@selector(starRatingView:shouldShowScore:)]) {
+        shouldShow = [self.delegate starRatingView:self shouldShowScore:score];
+    }
+    if (!shouldShow)  return ;
+    
+    
     p.x = score * self.frame.size.width;
     self.starForegroundView.frame = CGRectMake(0, 0, p.x, self.frame.size.height);
     

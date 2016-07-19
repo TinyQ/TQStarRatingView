@@ -19,9 +19,7 @@
 		58F0AEF517CDD614009FE3CB /* TQViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F0AEF417CDD614009FE3CB /* TQViewController.m */; };
 		58F0AEF817CDD614009FE3CB /* TQViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58F0AEF617CDD614009FE3CB /* TQViewController.xib */; };
 		58F0AF0117CDD6A3009FE3CB /* TQStarRatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F0AF0017CDD6A3009FE3CB /* TQStarRatingView.m */; };
-		58F0AF0717CDDA9D009FE3CB /* backgroundStar.png in Resources */ = {isa = PBXBuildFile; fileRef = 58F0AF0317CDDA9D009FE3CB /* backgroundStar.png */; };
 		58F0AF0817CDDA9D009FE3CB /* backgroundStar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 58F0AF0417CDDA9D009FE3CB /* backgroundStar@2x.png */; };
-		58F0AF0917CDDA9D009FE3CB /* foregroundStar.png in Resources */ = {isa = PBXBuildFile; fileRef = 58F0AF0517CDDA9D009FE3CB /* foregroundStar.png */; };
 		58F0AF0A17CDDA9D009FE3CB /* foregroundStar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 58F0AF0617CDDA9D009FE3CB /* foregroundStar@2x.png */; };
 /* End PBXBuildFile section */
 
@@ -44,9 +42,7 @@
 		58F0AEF717CDD614009FE3CB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/TQViewController.xib; sourceTree = "<group>"; };
 		58F0AEFF17CDD6A3009FE3CB /* TQStarRatingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQStarRatingView.h; sourceTree = "<group>"; };
 		58F0AF0017CDD6A3009FE3CB /* TQStarRatingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQStarRatingView.m; sourceTree = "<group>"; };
-		58F0AF0317CDDA9D009FE3CB /* backgroundStar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgroundStar.png; sourceTree = "<group>"; };
 		58F0AF0417CDDA9D009FE3CB /* backgroundStar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backgroundStar@2x.png"; sourceTree = "<group>"; };
-		58F0AF0517CDDA9D009FE3CB /* foregroundStar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = foregroundStar.png; sourceTree = "<group>"; };
 		58F0AF0617CDDA9D009FE3CB /* foregroundStar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "foregroundStar@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -132,9 +128,7 @@
 		58F0AF0217CDDA9D009FE3CB /* Image */ = {
 			isa = PBXGroup;
 			children = (
-				58F0AF0317CDDA9D009FE3CB /* backgroundStar.png */,
 				58F0AF0417CDDA9D009FE3CB /* backgroundStar@2x.png */,
-				58F0AF0517CDDA9D009FE3CB /* foregroundStar.png */,
 				58F0AF0617CDDA9D009FE3CB /* foregroundStar@2x.png */,
 			);
 			path = Image;
@@ -197,9 +191,7 @@
 				58F0AEF017CDD614009FE3CB /* Default@2x.png in Resources */,
 				58F0AEF217CDD614009FE3CB /* Default-568h@2x.png in Resources */,
 				58F0AEF817CDD614009FE3CB /* TQViewController.xib in Resources */,
-				58F0AF0717CDDA9D009FE3CB /* backgroundStar.png in Resources */,
 				58F0AF0817CDDA9D009FE3CB /* backgroundStar@2x.png in Resources */,
-				58F0AF0917CDDA9D009FE3CB /* foregroundStar.png in Resources */,
 				58F0AF0A17CDDA9D009FE3CB /* foregroundStar@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -337,6 +329,7 @@
 				58F0AEFD17CDD614009FE3CB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
