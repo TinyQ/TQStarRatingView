@@ -22,9 +22,8 @@ starRatingView.delegate = self;
 
 ```objective-c
 
--(void)starRatingView:(TQStarRatingView *)view score:(float)score
-{
- 	self.scoreLabel.text = [NSString stringWithFormat:@"%0.2f",score * 10 ];
+-(void)starRatingView:(TQStarRatingView *)view score:(float)score{
+    self.scoreLabel.text = [NSString stringWithFormat:@"%0.2f",score * 10 ];
 }
 
 ```
@@ -39,8 +38,7 @@ starRatingView.delegate = self;
     
 ```objective-c    
 
-[self.starRatingView setScore:0.5f withAnimation:YES completion:^(BOOL finished)
-{
+[self.starRatingView setScore:0.5f withAnimation:YES completion:^(BOOL finished){
     NSLog(@"%@",@"starOver");
 }];
 
