@@ -7,10 +7,13 @@
 //
 
 #import "TQViewController.h"
+#import "TQStarRatingView.h"
 
-@interface TQViewController ()
+@interface TQViewController () <StarRatingViewDelegate>
 
-@property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
+@property (nonatomic, strong) TQStarRatingView *starRatingView;
+@property (nonatomic, strong) IBOutlet TQStarRatingView *nibStarRatingView;
+@property (nonatomic, weak) IBOutlet UILabel *scoreLabel;
 
 @end
 
@@ -20,14 +23,14 @@
 {
     [super viewDidLoad];
     
-    _starRatingView = [[TQStarRatingView alloc] initWithFrame:CGRectMake(30, 200, 250, 50)
+    self.starRatingView = [[TQStarRatingView alloc] initWithFrame:CGRectMake(30, 200, 250, 50)
                                                  numberOfStar:kNUMBER_OF_STAR];
-    _starRatingView.delegate = self;
-    [self.view addSubview:_starRatingView];
+    self.starRatingView.delegate = self;
+    [self.view addSubview:self.starRatingView];
     
 }
 
--(void)starRatingView:(TQStarRatingView *)view score:(float)score
+- (void)starRatingView:(TQStarRatingView *)view score:(float)score
 {
     self.scoreLabel.text = [NSString stringWithFormat:@"%0.2f",score * 10 ];
     
@@ -41,15 +44,10 @@
     
     [self.nibStarRatingView setScore:0.5f withAnimation:YES];
     
-    //or
-    /*
-     
-     [self.starRatingView setScore:0.5f withAnimation:YES completion:^(BOOL finished)
-     {
-     NSLog(@"%@",@"starOver");
-     }];
-     
-     */
+//OR
+//    [self.starRatingView setScore:0.5f withAnimation:YES completion:^(BOOL finished){
+//        NSLog(@"Finished");
+//    }];
 }
 
 @end

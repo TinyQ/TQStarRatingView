@@ -8,6 +8,10 @@
 
 
 #import <UIKit/UIKit.h>
+#define kBACKGROUND_STAR @"backgroundStar"
+#define kFOREGROUND_STAR @"foregroundStar"
+#define kNUMBER_OF_STAR  5
+
 @class TQStarRatingView;
 
 @protocol StarRatingViewDelegate <NSObject>
@@ -20,11 +24,10 @@
 @interface TQStarRatingView : UIView
 
 @property (nonatomic, readonly) int numberOfStar;
-
 @property (nonatomic, weak) id <StarRatingViewDelegate> delegate;
 
 /**
- *  初始化TQStarRatingView
+ *  Init TQStarRatingView
  *
  *  @param frame  Rectangles
  *  @param number 星星个数
@@ -52,6 +55,3 @@
 
 @end
 
-#define kBACKGROUND_STAR @"backgroundStar"
-#define kFOREGROUND_STAR @"foregroundStar"
-#define kNUMBER_OF_STAR  5

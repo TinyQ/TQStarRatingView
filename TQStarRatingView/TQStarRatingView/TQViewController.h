@@ -7,12 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "TQStarRatingView.h"
 
-@interface TQViewController : UIViewController <StarRatingViewDelegate>
-
-@property (nonatomic, strong) TQStarRatingView *starRatingView;
-@property (nonatomic, strong) IBOutlet TQStarRatingView *nibStarRatingView;
+@interface TQViewController : UIViewController
 
 - (IBAction)scoreButtonTouchUpInside:(id)sender;
 

@@ -81,36 +81,27 @@
 {
     NSAssert((score >= 0.0)&&(score <= 1.0), @"score must be between 0 and 1");
     
-    if (score < 0)
-    {
+    if (score < 0){
         score = 0;
     }
     
-    if (score > 1)
-    {
+    if (score > 1){
         score = 1;
     }
     
     CGPoint point = CGPointMake(score * self.frame.size.width, 0);
     
-    if(isAnimate)
-    {
+    if(isAnimate){
         __weak __typeof(self)weakSelf = self;
         
-        [UIView animateWithDuration:0.2 animations:^
-         {
+        [UIView animateWithDuration:0.2 animations:^{
              [weakSelf changeStarForegroundViewWithPoint:point];
-             
-         } completion:^(BOOL finished)
-         {
-             if (completion)
-             {
-                 completion(finished);
-             }
-         }];
-    }
-    else
-    {
+        } completion:^(BOOL finished){
+            if (completion){
+                completion(finished);
+            }
+        }];
+    } else {
         [self changeStarForegroundViewWithPoint:point];
     }
 }
@@ -122,8 +113,7 @@
     UITouch *touch = [touches anyObject];
     CGPoint point = [touch locationInView:self];
     CGRect rect = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
-    if(CGRectContainsPoint(rect,point))
-    {
+    if(CGRectContainsPoint(rect,point)){
         [self changeStarForegroundViewWithPoint:point];
     }
 }
@@ -134,10 +124,9 @@
     CGPoint point = [touch locationInView:self];
     __weak __typeof(self)weakSelf = self;
     
-    [UIView animateWithDuration:0.2 animations:^
-     {
-         [weakSelf changeStarForegroundViewWithPoint:point];
-     }];
+    [UIView animateWithDuration:0.2 animations:^{
+        [weakSelf changeStarForegroundViewWithPoint:point];
+    }];
 }
 
 #pragma mark -
@@ -155,8 +144,7 @@
     CGRect frame = self.bounds;
     UIView *view = [[UIView alloc] initWithFrame:frame];
     view.clipsToBounds = YES;
-    for (int i = 0; i < self.numberOfStar; i ++)
-    {
+    for (int i = 0; i < self.numberOfStar; i ++){
         UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:imageName]];
         imageView.frame = CGRectMake(i * frame.size.width / self.numberOfStar, 0, frame.size.width / self.numberOfStar, frame.size.height);
         [view addSubview:imageView];
@@ -176,13 +164,11 @@
 {
     CGPoint p = point;
     
-    if (p.x < 0)
-    {
+    if (p.x < 0){
         p.x = 0;
     }
     
-    if (p.x > self.frame.size.width)
-    {
+    if (p.x > self.frame.size.width){
         p.x = self.frame.size.width;
     }
     
@@ -191,8 +177,7 @@
     p.x = score * self.frame.size.width;
     self.starForegroundView.frame = CGRectMake(0, 0, p.x, self.frame.size.height);
     
-    if(self.delegate && [self.delegate respondsToSelector:@selector(starRatingView: score:)])
-    {
+    if(self.delegate && [self.delegate respondsToSelector:@selector(starRatingView: score:)]){
         [self.delegate starRatingView:self score:score];
     }
 }
