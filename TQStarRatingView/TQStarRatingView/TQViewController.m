@@ -24,7 +24,7 @@
     [super viewDidLoad];
     
     self.starRatingView = [[TQStarRatingView alloc] initWithFrame:CGRectMake(30, 200, 250, 50)
-                                                 numberOfStar:kNUMBER_OF_STAR];
+                                                     numberOfStar:kNUMBER_OF_STAR];
     self.starRatingView.delegate = self;
     [self.view addSubview:self.starRatingView];
     
