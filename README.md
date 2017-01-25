@@ -7,7 +7,7 @@ IOS 星星评分视图控件，点击和滑动评分。
 
 #### 控件效果
 
-![Image text](http://github.com/TinyQ/TQStarRatingView/raw/master/READMEIMAGE/TQStarRatingView.gif)
+![Image text](READMEIMAGE/TQStarRatingView.gif)
 
 #### 初始化
 
