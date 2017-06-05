@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "TQStarRatingView"
-  s.version      = "1.0"
+  s.version      = "1.1"
   s.summary      = "iOS 星星评分视图控件，点击和滑动评分。"
 
   s.description  = 'Star Rating Control, click on the slide to score a rating.'
@@ -36,7 +36,7 @@ Pod::Spec.new do |s|
   s.author       = { "tinyq" => "tinyqf@gmail.com" }
   s.platform     = :ios
 
-  s.source       = { :git => "https://github.com/TinyQ/TQStarRatingView.git", :tag => "1.0" }
+  s.source       = { :git => "https://github.com/TinyQ/TQStarRatingView.git", :tag => "1.1" }
 
   s.source_files = "TQStarRatingView/TQStarRating/**/*.{h,m}"
 
