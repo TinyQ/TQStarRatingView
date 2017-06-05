@@ -8,6 +8,7 @@
 
 
 #import <UIKit/UIKit.h>
+
 #define kBACKGROUND_STAR @"backgroundStar"
 #define kFOREGROUND_STAR @"foregroundStar"
 #define kNUMBER_OF_STAR  5
