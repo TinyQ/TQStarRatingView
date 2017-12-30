@@ -46,8 +46,5 @@ starRatingView.delegate = self;
   
 ####  About TinyQ
 
- email : <tinyqf@gmail.com>
- 
- blogs : <http://tinyq.me>
  
  
